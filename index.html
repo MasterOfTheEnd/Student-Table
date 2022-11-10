@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students list</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./script/index.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        addNewStudent();
+      });
+    </script>
+</head>
+<body>
+  <div class="container">
+    <div class="list-container">
+      <button id="add-btn">Добавить студента</button>
+      <div class="filter-container">
+        <input type="text" class="filter-input" placeholder="Отфильтровать по...">
+        <select name="filter-select" class="filter-select">
+          <option value="name">ФИО</option>
+          <option value="faculty">Факультет</option>
+          <option value="age">Возраст</option>
+          <option value="startYear">Год начала обучения</option>
+          <option value="endYear">Год окончания обучения</option>
+        </select>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th colspan="10">Список студентов</th>
+          </tr>
+          <tr id="0">
+            <th data-sort="id">#</th>
+            <th data-sort="firstName">Имя</th>
+            <th data-sort="lastName">Фамилия</th>
+            <th data-sort="surname">Отчество</th>
+            <th data-sort="age">Возраст</th>
+            <th data-sort="course">Курс</th>
+            <th data-sort="faculty">Факультет</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <form id="add-menu" class="help">
+    <button type="button" id="close-btn">
+      <span></span>
+      <span></span>
+    </button>
+    <label for="input-name">ФИО:</label>
+    <input id="input-name" type="text" name="name" placeholder="ФИО" required>
+    <label for="input-birthday">Дата рождения:</label>
+    <input id="input-birthday" type="date" name="birthday" placeholder="Дата рождения" required>
+    <label for="input-study">Год начала обучения:</label>
+    <input id="input-study" type="number" name="startYear" placeholder="Год" min="2010" max="2022" required>
+    <label for="input-faculty">Факультет:</label>
+    <input id = "input-faculty" type="text" name="faculty" placeholder="Факультет" required>
+    <button type="submit" id="submit-btn">Добавить карточку</button>
+  </form>
+</body>
+</html>
